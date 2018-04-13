@@ -1,0 +1,323 @@
+<robot
+  name="dummyarm">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0034862 0.064737 -0.016404"
+        rpy="0 0 0" />
+      <mass
+        value="0.3226" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dummyarm/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.62745 0.62745 0.62745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dummyarm/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="shoulder_preroll">
+    <inertial>
+      <origin
+        xyz="2.5611E-16 -5.2304E-10 0.0325"
+        rpy="0 0 0" />
+      <mass
+        value="2.0185" />
+      <inertia
+        ixx="0.0040694"
+        ixy="1.3553E-20"
+        ixz="-1.7379E-17"
+        iyy="0.0040694"
+        iyz="6.5491E-11"
+        izz="1.054E-18" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dummyarm/meshes/shoulder_preroll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.62745 0.62745 0.62745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dummyarm/meshes/shoulder_preroll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_yaw"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-3.30872245021211E-24 1.03397576569128E-25 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="shoulder_preroll" />
+    <axis
+      xyz="0 0 0.99999999999996" />
+  </joint>
+  <link
+    name="shoulder">
+    <inertial>
+      <origin
+        xyz="-1.6005E-16 -0.067 2.498E-16"
+        rpy="0 0 0" />
+      <mass
+        value="1.4162" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dummyarm/meshes/shoulder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.62745 0.62745 0.62745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dummyarm/meshes/shoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_roll"
+    type="revolute">
+    <origin
+      xyz="0 0 0.128"
+      rpy="1.60935438889366E-08 -1.14486694100156E-16 -2.10248485288389E-15" />
+    <parent
+      link="shoulder_preroll" />
+    <child
+      link="shoulder" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="upperarm_preroll">
+    <inertial>
+      <origin
+        xyz="0.00061014 6.8907E-09 -0.021307"
+        rpy="0 0 0" />
+      <mass
+        value="0.52036" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dummyarm/meshes/upperarm_preroll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.62745 0.62745 0.62745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dummyarm/meshes/upperarm_preroll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_pitch"
+    type="revolute">
+    <origin
+      xyz="0 -0.134 0"
+      rpy="0 -1.56633965057533E-14 6.93889390390723E-18" />
+    <parent
+      link="shoulder" />
+    <child
+      link="upperarm_preroll" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="upperarm">
+    <inertial>
+      <origin
+        xyz="-1.8839E-15 0 -0.119"
+        rpy="0 0 0" />
+      <mass
+        value="0.67293" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dummyarm/meshes/upperarm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.62745 0.62745 0.62745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dummyarm/meshes/upperarm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="upperarm_roll"
+    type="revolute">
+    <origin
+      xyz="0.0299999999999997 0 -0.063499999999999"
+      rpy="2.33077873973729E-15 -4.62592926927151E-16 2.81025203108243E-15" />
+    <parent
+      link="upperarm_preroll" />
+    <child
+      link="upperarm" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="lowerarm_preroll_u">
+    <inertial>
+      <origin
+        xyz="0.105 -2.7756E-17 2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.97789" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dummyarm/meshes/lowerarm_preroll_u.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.62745 0.62745 0.62745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dummyarm/meshes/lowerarm_preroll_u.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="elbow"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.238"
+      rpy="-6.31088724176809E-30 1.6237011735143E-14 -4.02455846426619E-16" />
+    <parent
+      link="upperarm" />
+    <child
+      link="lowerarm_preroll_u" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="lowerarm_preroll_d" />
+  <joint
+    name="fastswitch"
+    type="fixed">
+    <origin
+      xyz="0.21 0 0"
+      rpy="8.8095E-16 3.1431E-31 -2.9837E-16" />
+    <parent
+      link="lowerarm_preroll_u" />
+    <child
+      link="lowerarm_preroll_d" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
